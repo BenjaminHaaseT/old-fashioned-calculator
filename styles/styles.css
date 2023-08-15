@@ -1,10 +1,11 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 header {
     text-align: center;
-    /* padding: 0.5rem; */
+    padding: 1rem;
     background: linear-gradient(rgb(36, 171, 249), rgb(86, 189, 248)  80%);
     margin-bottom: 1rem;
 }
@@ -14,13 +15,16 @@ h1 {
 }
 
 main {
-    width: 50%;
+    border: 1px solid red;
+    width: 35%;
+    height: 75vh;
     text-align: center;
     margin: 4rem auto;
 }
 
 #screen-container {
     margin: 1rem auto;
+    
 }
 
 #screen-container input {

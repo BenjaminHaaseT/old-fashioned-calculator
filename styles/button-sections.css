@@ -1,0 +1,55 @@
+#button-container {
+    border: 2px solid red;
+    width: 70%;
+    height: 80%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row-reverse;
+
+    
+}
+
+#right-btn-container {
+    border: 2px solid red;
+    width: 20%;
+    height: 100%;
+}
+
+.btn-li {
+    border: 1px solid orange;
+    width: 100%;
+
+}
+
+#right-btn-list {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    /* justify-content: space-evenly; */
+}
+
+#right-btn-list .btn-li {
+    height: 13%;
+}
+
+#right-btn-list .btn-li:last-of-type {
+    height: 37%;
+}
+
+ #right-btn-list .btn-li button {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+ }
+
+#left-btn-container {
+    border: 2px solid red;
+    width: 80%;
+}
+
+
+

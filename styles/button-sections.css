@@ -1,27 +1,24 @@
 #button-container {
-    border: 2px solid red;
+    border: 2px solid rgb(17, 41, 127);
+    border-radius: 4px;
+    background-color: rgb(17, 41, 127);
     width: 70%;
-    height: 70%;
-    margin: 2rem auto;
+    height: 75%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row-reverse;
-
     
 }
 
 #right-btn-container {
-    border: 2px solid red;
     width: 20%;
     height: 100%;
 }
 
 .btn-li {
-    border: 1px solid orange;
     width: 100%;
 
 }
-
-
 
 #left-btn-list,
 #right-btn-list {
@@ -35,15 +32,16 @@
 
 #left-btn-list .btn-li:first-of-type,
 #right-btn-list .btn-li {
-    height: 13%;
+    height: 15%;
 }
 
 /* Style right buttons */
 #right-btn-list .btn-li:last-of-type {
-    height: 37%;
+    height: 40%;
 }
 
- #right-btn-list .btn-li button {
+#left-btn-list button,
+ #right-btn-list button {
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -52,7 +50,6 @@
 
  /* Style left buttons */
 #left-btn-container {
-    border: 2px solid red;
     width: 80%;
 }
 
@@ -68,13 +65,13 @@
 
 #number-grid {
     width: 100%;
-    height: 63%;
+    height: 70%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
 #left-btn-list .btn-li:last-of-type {
-    height: 13%;
+    height: 15%;
     display: flex;
     flex-flow: row nowrap;
 }
@@ -85,6 +82,21 @@
 
 #left-btn-list .btn-li:last-of-type button:last-of-type {
     flex-grow: 1;
+}
+
+.btn {
+    border: 0.5px solid rgb(17, 41, 127);
+    background-color: rgb(68, 94, 189);
+    color: rgb(191, 189, 189);
+    cursor: pointer;
+}
+
+.op-btn {
+    color: rgb(237, 158, 48);
+}
+
+.btn:hover {
+    background-color: rgb(93, 123, 231);
 }
 
 

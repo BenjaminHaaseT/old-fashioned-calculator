@@ -3,10 +3,14 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(234, 228, 228);
+}
+
 header {
     text-align: center;
     padding: 1rem;
-    background: linear-gradient(rgb(36, 171, 249), rgb(86, 189, 248)  80%);
+    background: linear-gradient(rgb(145, 169, 255), rgb(163, 179, 239)  80%);
     margin-bottom: 1rem;
 }
 
@@ -15,22 +19,26 @@ h1 {
 }
 
 main {
-    border: 1px solid red;
+    border: 2px solid rgb(17, 41, 127);
+    border-radius: 6px;
+    background-color: rgb(145, 169, 255);
     width: 35%;
     height: 75vh;
     text-align: center;
     margin: 4rem auto;
-}
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
 
-#screen-container {
-    margin: 1rem auto;
-    
 }
 
 #screen-container input {
-    font-size: 1.5rem;
-    padding: 0.35rem;
-    border: 1px solid black;
+    background-color: rgb(241, 230, 230);
+    font-size: 1.7rem;
+    height: 120%;
+    padding: 0.25rem;
+    border: 2px solid rgb(17, 41, 127);
     border-radius: 4px;
 }
 

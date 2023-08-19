@@ -40,6 +40,8 @@ main {
     padding: 0.25rem;
     border: 2px solid rgb(17, 41, 127);
     border-radius: 4px;
+    text-align: right;
+    color: orange;
 }
 
 #screen-container input:focus {

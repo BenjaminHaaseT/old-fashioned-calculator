@@ -17,18 +17,36 @@ const numberBtnsList = numberGridElement.children;
 // const threeBtnElement = numberBtnsList[8];
 
 
-
-
 let currentValue = 0;
+let previousValue = 0;
+let mantissa = 0;
 let currentOp = null;
 
-function enterInput(input) {
-    if (currentValue === 0 && !currentOp)
+for (let numbBtn of numberBtnsList) {
+    const numbVal = parseInt(numbBtn.textContent);
+    numbBtn.addEventListener('click', enterInput.bind(this, numbVal));
 }
+
 
 acBtnElement.addEventListener('click', clear);
 
+
 function clear() {
     currentValue = 0;
+    screenElement.value = currentValue;
+}
+
+function enterInput(input) {
+    if (currentOp) {
+        previousValue = currentValue;
+        currentValue = previousValue;
+    } else {
+        if (currentValue) {
+            currentValue *= 10;
+            currentValue += input;
+        } else {
+            currentValue = input;
+        }
+    }
     screenElement.value = currentValue;
 }

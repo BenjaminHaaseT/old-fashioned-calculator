@@ -5,6 +5,11 @@ const rightBtnListElement = document.getElementById('right-btn-list');
 const acBtnElement = document.getElementById('clear-btn');
 const negBtnElement = document.getElementById('negate-btn');
 const modBtnElement = document.getElementById('mod-btn');
+const eqBtnElement = document.getElementById('eq-btn');
+const divBtnElement = rightBtnListElement.children[0];
+const mulBtnElement = rightBtnListElement.children[1];
+const subBtnElement = rightBtnListElement.children[2];
+const addBtnElement = rightBtnListElement.children[3];
 const numberBtnsList = numberGridElement.children;
 
 const MOD = 'MOD';
@@ -27,6 +32,12 @@ for (let numbBtn of numberBtnsList) {
 acBtnElement.addEventListener('click', clear);
 negBtnElement.addEventListener('click', negate);
 modBtnElement.addEventListener('click', setOperation.bind(this, MOD));
+divBtnElement.addEventListener('click', setOperation.bind(this, DIV));
+mulBtnElement.addEventListener('click', setOperation.bind(this, MUL));
+subBtnElement.addEventListener('click', setOperation.bind(this, SUB));
+addBtnElement.addEventListener('click', setOperation.bind(this, ADD));
+eqBtnElement.addEventListener('click', performOperation);
+
 
 function clear() {
     currentValue = 0;
@@ -46,7 +57,6 @@ function enterInput(input) {
     if (currentOp) {
         previousValue = currentValue;
         currentValue = input;
-        console.log(`Previous Value: ${previousValue}, current value: ${currentValue}, current operation: ${currentOp}`);
     } else {
         if (currentValue) {
             currentValue *= 10;

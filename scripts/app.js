@@ -22,6 +22,8 @@ let currentValue = null;
 let previousValue = null;
 let mantissa = 0;
 let currentOp = null;
+let setNewCurrentValFlag = false;
+let currentOpFlag = false;
 
 
 for (let numbBtn of numberBtnsList) {
@@ -42,6 +44,10 @@ eqBtnElement.addEventListener('click', performOperation);
 function clear() {
     currentValue = 0;
     screenElement.value = currentValue;
+    previousValue = null;
+    currentOp = false;
+    setNewCurrentValFlag = false;
+    currentOpFlag = false;
 }
 
 function negate() {
@@ -52,31 +58,30 @@ function negate() {
 }
 
 function enterInput(input) {
-    // Check if the current operation has been set, if so move current value
-    // into previous value and set current value to input
-    if (currentOp) {
-        previousValue = currentValue;
-        currentValue = input;
-    } else {
-        if (currentValue) {
+    if (currentValue !== null) {
+        if (currentOp !== null && setNewCurrentValFlag) {
+            previousValue = currentValue;
+            currentValue = input;
+            setNewCurrentValFlag = false;
+        } else {
             currentValue *= 10;
             currentValue += input;
-        } else {
-            currentValue = input;
         }
+        screenElement.value = currentValue;
     }
-    screenElement.value = currentValue;
 }
 
 function setOperation(op) {
     // Ensure that we have a valid current value to work with, otherwise do nothing
-    if (currentValue !== null) {
+    if (currentValue !== null && !currentOpFlag) {
         currentOp = op;
+        setNewCurrentValFlag = true;
+        currentOpFlag = true;
     }
 }
 
 function performOperation() {
-    if (previousValue !== null && currentValue !== null && currentOp) {
+    if (previousValue !== null && currentValue !== null && currentOpFlag) {
         if (currentOp === ADD)  {
             currentValue += previousValue;
         } else if (currentOp === SUB) {
@@ -90,6 +95,7 @@ function performOperation() {
         }
         previousValue = null;
         currentOp = null;
+        currentOpFlag = false;
         screenElement.value = currentValue;
     }
 }
